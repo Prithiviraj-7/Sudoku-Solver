@@ -1,4 +1,9 @@
-# Sudoku-game
-code for solving sudoku puzzle
+# Sudoku-Solver
+Backtracking approach to solve Sudoku with GUI
 
-This code uses backtracking algorithm to solve for unassigned positions in Sudoku
+Step 1: Sudoku grid is displayed using Pygame to get input from the user
+
+Step 2: Backtracking algorithm is implemented to solve the Sudoku
+
+Step 3: Solved Sudoku is printed in grid format using Pygame
+
