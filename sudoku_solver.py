@@ -1,10 +1,3 @@
-def print_grid(grid):
-    for i in range(9):
-        for j in range(9):
-            print(grid[i][j], end = " ")
-        print("")
-
-# function to check for unassigned position and returns false if there are no unassigned positions
 def is_empty(grid, pos):
     for c_row in range(9):
         for c_col in range(9):
@@ -39,7 +32,7 @@ def box_safe(grid,row,col,num):
 def is_safe(grid,row,col,num):
      return row_safe(grid, row, num) and col_safe(grid, col, num) and box_safe(grid, row, col, num)
 
-def solver(grid):
+def solve(grid):
     pos = [0,0]
 
     if not is_empty(grid,pos):
@@ -51,30 +44,11 @@ def solver(grid):
     for num in range(1,10):
         if is_safe(grid,row,col,num):
             grid[row][col] = num
-            if solver(grid):
+            if solve(grid):
                 return True
             grid[row][col] = 0
 
     return False
-
-if __name__ == "__main__":
-
-    grid = [[0 for i in range(9)] for j in range(9)]
-
-    grid = [[3, 0, 6, 5, 0, 8, 4, 0, 0],
-          [5, 2, 0, 0, 0, 0, 0, 0, 0],
-          [0, 8, 7, 0, 0, 0, 0, 3, 1],
-          [0, 0, 3, 0, 1, 0, 0, 8, 0],
-          [9, 0, 0, 8, 6, 3, 0, 0, 5],
-          [0, 5, 0, 0, 9, 0, 6, 0, 0],
-          [1, 3, 0, 0, 0, 0, 2, 5, 0],
-          [0, 0, 0, 0, 0, 0, 0, 7, 4],
-          [0, 0, 5, 2, 0, 6, 3, 0, 0]]
-
-    if solver(grid):
-        print_grid(grid)
-    else:
-        print("No Solution exists")
 
 
 
