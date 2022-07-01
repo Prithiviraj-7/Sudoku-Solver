@@ -10,6 +10,7 @@ num_font = pygame.font.Font(None,48)
 
 grid = [[0 for i in range(9)] for j in range(9)]
 
+#prints the solution for sudoku
 def print_grid():
     screen = pygame.display.set_mode([550,550])
     pygame.display.set_caption("SUDOKU SOLUTION")
@@ -37,6 +38,7 @@ def print_grid():
                 pygame.quit()
                 return
 
+#gets input from the user for sudoku
 def get_input(screen,pos):
 
     row = pos[1]//50
@@ -56,7 +58,8 @@ def get_input(screen,pos):
                     pygame.display.update()  
                     return
                 return
-                   
+
+#displays the sudoku grid                 
 def input_grid():
     screen = pygame.display.set_mode([550,550])
     pygame.display.set_caption("SUDOKU")
